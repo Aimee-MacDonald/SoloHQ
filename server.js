@@ -9,7 +9,7 @@ app.set("view engine", "pug");
 app.use(express.static(path.join(__dirname, "static")));
 
 app.get("/", function(req, res){
-  res.render("home");
+  res.render("dashboard");
 });
 
 app.listen(port, function(){

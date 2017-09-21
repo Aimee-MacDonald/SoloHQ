@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#dashboard {
+  background-color: #3b0d3b;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#dashboard #header {
+  background-color: #e34d00;
+  display: flex;
+  flex-direction: row;
+}
+
+#dashboard #main {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#dashboard #main #left-flap {
+  background-color: #6fc72e;
+}
+
+#dashboard #main #right-flap {
+  background-color: #6fc72e;
+}
