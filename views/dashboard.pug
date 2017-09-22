@@ -9,7 +9,19 @@ head
 body
   #dashboard
     header(id="header")
-      h1 Header
+      #standard
+        button(onclick="btnHome()") Home
+        h1 SoloHQ
+        button(onclick="btnLogin()") Login
+      #weekview
+        div(class="day" id="day1")
+        div(class="day" id="day2")
+        div(class="day" id="day3")
+        div(class="day" id="day4")
+        div(class="day" id="day5")
+        div(class="day" id="day6")
+        div(class="day" id="day7")
+      
     main(id="main")
       aside(id="left-flap")
         h1 Left Flap

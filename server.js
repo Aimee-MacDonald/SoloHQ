@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 8080;
 const path = require("path");
+require("dotenv").config();
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -14,4 +15,5 @@ app.get("/", function(req, res){
 
 app.listen(port, function(){
   console.log("Server Listening on Port: " + port);
+  console.log(process.env.NAME);
 });

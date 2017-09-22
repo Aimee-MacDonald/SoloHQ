@@ -10,10 +10,31 @@
   height: 100vh;
 }
 
-#dashboard #header {
-  background-color: #e34d00;
+#dashboard #header #standard {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+#dashboard #header #weekview {
+  display: none;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 100%;
+  position: absolute;
+  background-color: #b247b2;
+}
+
+#dashboard #header #weekview .day {
+  background-color: #e34d00;
+  border: 2px solid #6fc72e;
+  border-radius: 50%;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+#dashboard #header:hover #weekview {
+  display: flex;
 }
 
 #dashboard #main {
