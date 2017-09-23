@@ -44,3 +44,26 @@ app.get("/register", function(req, res){
     });
   });
 });
+
+app.get("/login", function(req, res){
+  var un = req.query.un;
+  var pw = req.query.pw;
+
+  var collection = database.collection("users");
+  collection.find({
+    username: un
+  }).toArray(function(err, d){
+    if(err) throw err;
+
+    if(d != ""){
+      var hash = d[0].password;
+      bcrypt.compare(pw, hash, function(err, resp){
+        if(resp){
+          console.log("Yeah!");
+        } else {
+          console.log("Nope!");
+        }
+      });
+    }
+  });
+});

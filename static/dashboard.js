@@ -1,10 +1,10 @@
 function btnLogin(){
   document.getElementById("header").innerHTML =`
-    <form id="loginform" action="/register" method="get">
-      <button type="submit">Register</button>
+    <form id="loginform" action="/login" method="get">
+      <button>Register</button>
       <input type="text" placeholder="Email" name="un" required>
       <input type="password" placeholder="Password" name="pw" required>
-      <button>Login</button>
+      <button type="submit">Login</button>
     </form>
   `;
 }
