@@ -1,18 +1,23 @@
-var text = "MEEK!";
 var authorised = false;
+
+var visitorHeader = `
+  <h1>Meep</h1>
+`;
+
+var userHeader = `
+  <h1>Meep</h1>
+`;
 
 module.exports = {
   authorise: function(auth){
     authorised = auth;
-
-    if(authorised){
-      text = "Moop";
-    } else {
-      text = "Meep";
-    }
   },
 
   render: function () {
-    return text;
+    if(authorised){
+      return userHeader;
+    } else {
+      return visitorHeader;
+    }
   }
 };

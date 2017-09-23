@@ -41,7 +41,7 @@ app.get("/", function(req, res){
   } else {
     cHeader.authorise(false);
   }
-  res.render("dashboard", {name: cHeader.render()});
+  res.render("dashboard", {header: cHeader.render()});
 });
 
 app.get("/register", function(req, res){

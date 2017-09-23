@@ -8,18 +8,7 @@ head
   title SoloHQ
 body
   #dashboard
-    header(id="header")
-      #standard
-        h1= name
-        button(onclick="btnLogin()") Login
-      #weekview
-        div(class="day" id="day1")
-        div(class="day" id="day2")
-        div(class="day" id="day3")
-        div(class="day" id="day4")
-        div(class="day" id="day5")
-        div(class="day" id="day6")
-        div(class="day" id="day7")
+    div !{header}
       
     main(id="main")
       aside(id="left-flap")
