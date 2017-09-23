@@ -1,11 +1,17 @@
 var authorised = false;
 
 var visitorHeader = `
-  <h1>Meep</h1>
+  <div id="header">
+    <h1>SoloHQ</h1>
+    <button onclick="btnLogin()">Login</button>
+  </div>
 `;
 
 var userHeader = `
-  <h1>Meep</h1>
+<div id="header">
+  <h1>SoloHQ</h1>
+  <button onclick="btnLogout()">Logout</button>
+</div>
 `;
 
 module.exports = {
