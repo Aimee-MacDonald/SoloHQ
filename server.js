@@ -37,10 +37,11 @@ app.use(passport.session());
 
 app.get("/", function(req, res){
   if(req.isAuthenticated()){
-    res.render("dashboard", {name: cHeader.render()});
+    cHeader.authorise(true);
   } else {
-    res.render("dashboard", {name: "Unauthenticated User"});
+    cHeader.authorise(false);
   }
+  res.render("dashboard", {name: cHeader.render()});
 });
 
 app.get("/register", function(req, res){
