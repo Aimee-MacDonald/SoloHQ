@@ -10,10 +10,6 @@
   height: 100vh;
 }
 
-#dashboard #header {
-  background-color: #6fc72e;
-}
-
 #dashboard #main {
   height: 100%;
   display: flex;
@@ -27,37 +23,4 @@
 
 #dashboard #main #right-flap {
   background-color: #6fc72e;
-}
-
-#loginform {
-  background-color: #6fc72e;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  padding: 10px;
-}
-
-#loginform input {
-  padding: 5px;
-  text-align: center;
-  background-color: #d28dd2;
-  color: #3b0d3b;
-  border-color: #3b0d3b;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  flex-grow: 1;
-  margin: 0px 5px;
-}
-
-#loginform button {
-  padding: 5px 20px;
-  text-align: center;
-  background-color: #a6e07b;
-  color: #3b0d3b;
-  border-color: #3b0d3b;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0px 5px;
 }
