@@ -5,6 +5,8 @@ const path = require("path");
 require("dotenv").config();
 const mongo = require("mongodb").MongoClient;
 const bcrypt = require("bcryptjs");
+const session = require("express-session");
+const passport = require("passport");
 var database;
 
 console.log("Connecting..");
@@ -22,7 +24,22 @@ app.set("view engine", "pug");
 
 app.use(express.static(path.join(__dirname, "static")));
 
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false,
+  //cookie: { secure: true }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.get("/", function(req, res){
+  if(req.isAuthenticated()){
+    console.log("User is Auth");
+  } else {
+    console.log("User is not Auth");
+  }
   res.render("dashboard");
 });
 
@@ -40,7 +57,10 @@ app.get("/register", function(req, res){
         password: hash
       });
 
-      res.redirect("/");
+      req.login(d[0]._id, function(err){
+        if(err) throw err;
+        res.redirect("/");
+      });
     });
   });
 });
@@ -59,11 +79,22 @@ app.get("/login", function(req, res){
       var hash = d[0].password;
       bcrypt.compare(pw, hash, function(err, resp){
         if(resp){
-          console.log("Yeah!");
+          req.login(d[0]._id, function(err){
+            if(err) throw err;
+            res.redirect("/");
+          });
         } else {
-          console.log("Nope!");
+          res.redirect("/");
         }
       });
     }
   });
+});
+
+passport.serializeUser(function(user_id, done){
+  done(null, user_id);
+});
+
+passport.deserializeUser(function(user_id, done){
+  done(null, user_id);
 });
