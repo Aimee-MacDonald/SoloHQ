@@ -7,6 +7,7 @@ const mongo = require("mongodb").MongoClient;
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const passport = require("passport");
+const cHeader = require("./components/header");
 var database;
 
 console.log("Connecting..");
@@ -36,7 +37,7 @@ app.use(passport.session());
 
 app.get("/", function(req, res){
   if(req.isAuthenticated()){
-    res.render("dashboard", {name: "Authenticated User"});
+    res.render("dashboard", {name: cHeader.render()});
   } else {
     res.render("dashboard", {name: "Unauthenticated User"});
   }
