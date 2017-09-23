@@ -4,7 +4,7 @@ const port = 8080;
 const path = require("path");
 require("dotenv").config();
 const mongo = require("mongodb").MongoClient;
-
+const bcrypt = require("bcryptjs");
 var database;
 
 console.log("Connecting..");
@@ -29,12 +29,18 @@ app.get("/", function(req, res){
 app.get("/register", function(req, res){
   var un = req.query.un;
   var pw = req.query.pw;
-  var collection = database.collection("users");
 
-  collection.insert({
-    username: un,
-    password: pw
+  bcrypt.genSalt(10, function(err, salt){
+    if(err) throw err;
+    bcrypt.hash(pw, salt, function(err, hash){
+      var collection = database.collection("users");
+
+      collection.insert({
+        username: un,
+        password: hash
+      });
+
+      res.redirect("/");
+    });
   });
-
-  res.redirect("/");
 });
