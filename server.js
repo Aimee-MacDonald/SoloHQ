@@ -36,11 +36,10 @@ app.use(passport.session());
 
 app.get("/", function(req, res){
   if(req.isAuthenticated()){
-    console.log("User is Auth");
+    res.render("dashboard", {name: "Authenticated User"});
   } else {
-    console.log("User is not Auth");
+    res.render("dashboard", {name: "Unauthenticated User"});
   }
-  res.render("dashboard");
 });
 
 app.get("/register", function(req, res){
