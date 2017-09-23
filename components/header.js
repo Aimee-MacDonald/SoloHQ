@@ -2,61 +2,94 @@ var authorised = false;
 
 var visitorHeader = `
   <style>
-    #header{
-      background-color: #6fc72e;
-    }
+  * {
+  margin: 0;
+  padding: 0;
+}
 
-    #loginform {
-      background-color: #6fc72e;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-around;
-      padding: 10px;
-    }
+#header {
+  background-color: #3b0d3b;
+  color: #b247b2;
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 
-    #loginform input {
-      padding: 5px;
-      text-align: center;
-      background-color: #d28dd2;
-      color: #3b0d3b;
-      border-color: #3b0d3b;
-      border-radius: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      flex-grow: 1;
-      margin: 0px 5px;
-    }
+button {
+  padding: 5px 20px;
+  background-color: #6fc72e;
+  font-weight: bold;
+  border-radius: 10px;
+  border-color: #b247b2;
+}
 
-    #loginform button {
-      padding: 5px 20px;
-      text-align: center;
-      background-color: #a6e07b;
-      color: #3b0d3b;
-      border-color: #3b0d3b;
-      border-radius: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      margin: 0px 5px;
-    }
+input {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#uninput {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#loginform {
+  padding: 30px;
+  display: flex;
+  flex-flow: nowrap column;
+}
+
+#loginbtn2 {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-color: #6fc72e;
+}
   </style>
 
+  <div id="header">
+    <h1 id="logo">SoloHQ</h1>
+    <button onclick="btnLogin()" id="loginbtn">Login</button>
+  </div>
+
   <script>
+    var el_header = document.getElementById("header");
+
     function btnLogin(){
-      document.getElementById("header").innerHTML =\`
+      el_header.innerHTML = \`
+        <h1 id="logo">SoloHQ</h1>
         <form id="loginform" action="/login" method="get">
-          <button>Register</button>
-          <input type="text" placeholder="Email" name="un" required>
-          <input type="password" placeholder="Password" name="pw" required>
-          <button type="submit">Login</button>
+          <input type="text" placeholder="Email" id="uninput" name="un" required>
+          <input type="password" placeholder="Password" id="pwinput" name="pw" required>
+          <button type="submit" id="loginbtn2">Login</button>
         </form>
       \`;
     }
-  </script>
 
-  <div id="header">
-    <h1>SoloHQ</h1>
-    <button onclick="btnLogin()">Login</button>
-  </div>
+    function reset(){
+      el_header.innerHTML = \`
+        <h1 id="logo">SoloHQ</h1>
+        <button onclick="btnLogin()" id="loginbtn">Login</button>
+      \`;
+    }
+
+    el_header.addEventListener("mouseout", function(e){
+      var eid = e.toElement.id
+      if(eid !== "uninput"
+            && eid !== "pwinput"
+            && eid !== "header"
+            && eid !== "loginform"
+            && eid !== "loginbtn2"
+            && document.getElementById("uninput").value === ""
+            && document.getElementById("pwinput").value === ""){
+        reset();
+      }
+    });
+  </script>
 `;
 
 var userHeader = `
