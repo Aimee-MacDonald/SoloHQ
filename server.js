@@ -25,3 +25,16 @@ app.use(express.static(path.join(__dirname, "static")));
 app.get("/", function(req, res){
   res.render("dashboard");
 });
+
+app.get("/register", function(req, res){
+  var un = req.query.un;
+  var pw = req.query.pw;
+  var collection = database.collection("users");
+
+  collection.insert({
+    username: un,
+    password: pw
+  });
+
+  res.redirect("/");
+});
