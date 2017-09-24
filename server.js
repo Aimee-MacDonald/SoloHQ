@@ -7,7 +7,7 @@ const mongo = require("mongodb").MongoClient;
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const passport = require("passport");
-const cHeader = require("./components/header");
+const components = require("./components");
 var database;
 
 console.log("Connecting..");
@@ -37,11 +37,10 @@ app.use(passport.session());
 
 app.get("/", function(req, res){
   if(req.isAuthenticated()){
-    cHeader.authorise(true);
+    res.render("dashboard", {header: components.userHeader()});
   } else {
-    cHeader.authorise(false);
+    res.render("dashboard", {header: components.visitorHeader()});
   }
-  res.render("dashboard", {header: cHeader.render()});
 });
 
 app.get("/register", function(req, res){
