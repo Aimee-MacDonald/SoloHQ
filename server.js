@@ -58,9 +58,17 @@ app.get("/register", function(req, res){
         password: hash
       });
 
-      req.login(d[0]._id, function(err){
+      collection.find({
+        username: un
+      }).toArray(function(err, d){
         if(err) throw err;
-        res.redirect("/");
+
+        if(d != ""){
+          req.login(d[0]._id, function(err){
+            if(err) throw err;
+            res.redirect("/");
+          });
+        }
       });
     });
   });

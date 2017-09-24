@@ -21,6 +21,27 @@
   background-color: #6fc72e;
 }
 
+#dashboard #main #workspace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dashboard #main #workspace #registration {
+  display: flex;
+  flex-flow: nowrap column;
+}
+
+#dashboard #main #workspace #registration input {
+  margin: 5px;
+}
+
+#dashboard #main #workspace #registration button {
+  border-radius: 0;
+  padding: 10px;
+  margin: 5px;
+}
+
 #dashboard #main #right-flap {
   background-color: #6fc72e;
 }
