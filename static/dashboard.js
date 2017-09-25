@@ -4,7 +4,7 @@ var rightFlapFlag = true;
 function toggleLeftFlap(){
   leftFlapFlag = !leftFlapFlag;
 
-  if(leftFlapFlag){
+  if(!leftFlapFlag){
     document.getElementById("inputs").style.display = "none";
     document.getElementById("buttons").style.display = "none";
   } else {
@@ -16,7 +16,7 @@ function toggleLeftFlap(){
 function toggleRightFlap(){
   rightFlapFlag = !rightFlapFlag;
 
-  if(rightFlapFlag){
+  if(!rightFlapFlag){
     document.getElementById("timer").style.display = "none";
     document.getElementById("pomodori").style.display = "none";
   } else {
