@@ -12,15 +12,17 @@ body
       
     main(id="main")
       aside(id="left-flap")
-        #inputs
-          input(type="text", placeholder="Links")
-          input(type="text", placeholder="To do")
-          input(type="text", placeholder="Dreams")
-          input(type="text", placeholder="Fears")
-        #buttons
-          button(type="button") Feed
-          button(type="button") Blog
-          button(type="button") Journal
+        #left-flap-content
+          #inputs
+            input(type="text", placeholder="Links")
+            input(type="text", placeholder="To do")
+            input(type="text", placeholder="Dreams")
+            input(type="text", placeholder="Fears")
+          #buttons
+            button(type="button") Feed
+            button(type="button") Blog
+            button(type="button") Journal
+        div(id="left-arrow" onclick="toggleLeftFlap()")
       article(id="workspace")
         form(id="registration" action="/register" method="get")
           input(type="text" placeholder="Email" name="un" required)
@@ -28,15 +30,17 @@ body
           input(type="password" placeholder="Confirm Password" name="cpw" required)
           button(type="submit") Register
       aside(id="right-flap")
-        #timer
-          h1 Feed Me
-          #clock
-        ul(id="pomodori")
-          li(class="pomodoro", id="pomodoro1") Pomodoro 1
-          li(class="pomodoro", id="pomodoro2") Pomodoro 2
-          li(class="pomodoro", id="pomodoro3") Pomodoro 3
-          li(class="pomodoro", id="pomodoro4") Pomodoro 4
-          li(class="pomodoro", id="pomodoro5") Pomodoro 5
-          li(class="pomodoro", id="pomodoro6") Pomodoro 6
+        div(id="right-arrow" onclick="toggleRightFlap()")
+        #right-flap-content
+          #timer
+            h1 Feed Me
+            #clock
+          ul(id="pomodori")
+            li(class="pomodoro", id="pomodoro1") Pomodoro 1
+            li(class="pomodoro", id="pomodoro2") Pomodoro 2
+            li(class="pomodoro", id="pomodoro3") Pomodoro 3
+            li(class="pomodoro", id="pomodoro4") Pomodoro 4
+            li(class="pomodoro", id="pomodoro5") Pomodoro 5
+            li(class="pomodoro", id="pomodoro6") Pomodoro 6
   </div>
   script(src="/dashboard.js", charset="utf-8")

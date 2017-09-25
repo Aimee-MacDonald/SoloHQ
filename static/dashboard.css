@@ -19,36 +19,45 @@
 }
 
 #dashboard #main #left-flap {
+  display: flex;
+  flex-flow: nowrap row;
+  align-items: center;
+  height: 100%;
+}
+
+#dashboard #main #left-flap #left-flap-content {
   background-color: #3b0d3b;
   display: flex;
   flex-flow: nowrap column;
   justify-content: space-between;
-  padding: 5px;
   border-right: 2px solid #6fc72e;
+  height: 100%;
 }
 
-#dashboard #main #left-flap #inputs {
+#dashboard #main #left-flap #left-flap-content #inputs {
   display: flex;
   flex-flow: nowrap column;
   border-radius: 5px;
+  margin: 5px;
 }
 
-#dashboard #main #left-flap #inputs input {
+#dashboard #main #left-flap #left-flap-content #inputs input {
   padding: 5px;
   background-color: #6fc72e;
   padding: 5px;
   border-color: #b247b2;
   font-size: 20px;
   font-weight: bold;
+  width: 200px;
 }
 
-#dashboard #main #left-flap #buttons {
+#dashboard #main #left-flap #left-flap-content #buttons {
   display: flex;
   flex-flow: nowrap column;
   border-radius: 5px;
 }
 
-#dashboard #main #left-flap #buttons button {
+#dashboard #main #left-flap #left-flap-content #buttons button {
   border-radius: 5px;
   padding: 10px;
   margin: 2px;
@@ -56,6 +65,24 @@
   font-weight: bolder;
   background-color: #6fc72e;
   color: #3b0d3b;
+}
+
+#dashboard #main #left-flap #left-arrow {
+  width: 0;
+  height: 0;
+  border: 10px solid #6fc72e;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#dashboard #main #left-flap #left-arrow:hover {
+  border: 10px solid #e34d00;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
 }
 
 #dashboard #main #workspace {
@@ -80,15 +107,43 @@
 }
 
 #dashboard #main #right-flap {
+  height: 100%;
   display: flex;
-  flex-flow: nowrap column;
+  flex-flow: nowrap row;
+  align-items: center;
 }
 
-#dashboard #main #right-flap #timer {
+#dashboard #main #right-flap #right-arrow {
+  width: 0;
+  height: 0;
+  border: 10px solid #6fc72e;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#dashboard #main #right-flap #right-arrow:hover {
+  border: 10px solid #e34d00;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+#dashboard #main #right-flap #right-flap-content {
+  display: flex;
+  flex-flow: nowrap column;
+  border-left: 2px solid #6fc72e;
+  height: 100%;
+}
+
+#dashboard #main #right-flap #right-flap-content #timer {
   background-color: #b247b2;
   min-width: 200px;
   min-height: 200px;
   margin: 10px;
+  margin-bottom: 0;
   display: flex;
   flex-flow: nowrap column;
   justify-content: center;
@@ -96,12 +151,12 @@
   border-radius: 10px;
 }
 
-#dashboard #main #right-flap #timer h1 {
+#dashboard #main #right-flap #right-flap-content #timer h1 {
   font-size: 30px;
   font-weight: bolder;
 }
 
-#dashboard #main #right-flap #timer #clock {
+#dashboard #main #right-flap #right-flap-content #timer #clock {
   background-color: #6fc72e;
   width: 120px;
   height: 120px;
@@ -109,14 +164,14 @@
   border-radius: 50%;
 }
 
-#dashboard #main #right-flap #pomodori {
+#dashboard #main #right-flap #right-flap-content #pomodori {
   background-color: #b247b2;
   list-style-type: none;
   margin: 10px;
   border-radius: 5px;
 }
 
-#dashboard #main #right-flap #pomodori .pomodoro {
+#dashboard #main #right-flap #right-flap-content #pomodori .pomodoro {
   background-color: #6fc72e;
   padding: 10px;
   text-align: center;

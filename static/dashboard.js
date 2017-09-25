@@ -1,31 +1,26 @@
+var leftFlapFlag = true;
+var rightFlapFlag = true;
 
+function toggleLeftFlap(){
+  leftFlapFlag = !leftFlapFlag;
 
-
-/*
-function Dashboard(){
-  this.header = new Header();
+  if(leftFlapFlag){
+    document.getElementById("inputs").style.display = "none";
+    document.getElementById("buttons").style.display = "none";
+  } else {
+    document.getElementById("inputs").style.display = "flex";
+    document.getElementById("buttons").style.display = "flex";
+  }
 }
 
-function Header(){
-  this.lines = [
-    `<div id="header">`,
-    `</div>`
-  ];
+function toggleRightFlap(){
+  rightFlapFlag = !rightFlapFlag;
+
+  if(rightFlapFlag){
+    document.getElementById("timer").style.display = "none";
+    document.getElementById("pomodori").style.display = "none";
+  } else {
+    document.getElementById("timer").style.display = "flex";
+    document.getElementById("pomodori").style.display = "block";
+  }
 }
-
-Dashboard.prototype = {
-  render: function(){
-    return this.header.render();
-  }
-};
-
-Header.prototype = {
-  render: function(){
-    return this.lines.join("\n");
-  }
-};
-
-var el_dashboard = document.getElementById("dashboard");
-var dash = new Dashboard();
-el_dashboard.innerHTML = dash.render();
-*/
