@@ -37,7 +37,7 @@ app.use(passport.session());
 
 app.get("/", function(req, res){
   if(req.isAuthenticated()){
-    res.render("dashboard", {header: components.userHeader()});
+    res.render("dashboard", {header: components.userHeader("Aimée")});
   } else {
     res.render("dashboard", {header: components.visitorHeader()});
   }
