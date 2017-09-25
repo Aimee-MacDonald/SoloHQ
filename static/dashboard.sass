@@ -19,6 +19,8 @@ $red: #e34d00
     justify-content: space-between
     #left-flap
       background-color: $green
+      display: flex
+      flex-flow: nowrap column
     #workspace
       display: flex
       justify-content: center
@@ -34,3 +36,16 @@ $red: #e34d00
           margin: 5px
     #right-flap
       background-color: $green
+      display: flex
+      flex-flow: nowrap column
+      #timer
+        background-color: $light-purple
+        min-width: 200px
+        min-height: 200px
+        margin: 10px
+      #pomodori
+        background-color: $light-purple
+        .pomodoro
+          background-color: $red
+          padding: 10px
+          text-align: center

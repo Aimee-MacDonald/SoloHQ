@@ -19,6 +19,8 @@
 
 #dashboard #main #left-flap {
   background-color: #6fc72e;
+  display: flex;
+  flex-flow: nowrap column;
 }
 
 #dashboard #main #workspace {
@@ -44,4 +46,23 @@
 
 #dashboard #main #right-flap {
   background-color: #6fc72e;
+  display: flex;
+  flex-flow: nowrap column;
+}
+
+#dashboard #main #right-flap #timer {
+  background-color: #b247b2;
+  min-width: 200px;
+  min-height: 200px;
+  margin: 10px;
+}
+
+#dashboard #main #right-flap #pomodori {
+  background-color: #b247b2;
+}
+
+#dashboard #main #right-flap #pomodori .pomodoro {
+  background-color: #e34d00;
+  padding: 10px;
+  text-align: center;
 }
