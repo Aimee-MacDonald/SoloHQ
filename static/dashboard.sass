@@ -13,14 +13,41 @@ $red: #e34d00
   flex-direction: column
   height: 100vh
   #main
+    border-top: 2px solid $green
     height: 100%
     display: flex
     flex-direction: row
     justify-content: space-between
     #left-flap
-      background-color: $green
+      background-color: $dark-purple
       display: flex
       flex-flow: nowrap column
+      justify-content: space-between
+      padding: 5px
+      border-right: 2px solid $green
+      #inputs
+        display: flex
+        flex-flow: nowrap column
+        border-radius: 5px
+        input
+          padding: 5px
+          background-color: $green
+          padding: 5px
+          border-color: $light-purple
+          font-size: 20px
+          font-weight: bold
+      #buttons
+        display: flex
+        flex-flow: nowrap column
+        border-radius: 5px
+        button
+          border-radius: 5px
+          padding: 10px
+          margin: 2px
+          font-size: 20px
+          font-weight: bolder
+          background-color: $green
+          color: $dark-purple
     #workspace
       display: flex
       justify-content: center
@@ -35,7 +62,6 @@ $red: #e34d00
           padding: 10px
           margin: 5px
     #right-flap
-      background-color: $green
       display: flex
       flex-flow: nowrap column
       #timer
@@ -43,9 +69,28 @@ $red: #e34d00
         min-width: 200px
         min-height: 200px
         margin: 10px
+        display: flex
+        flex-flow: nowrap column
+        justify-content: center
+        align-items: center
+        border-radius: 10px
+        h1
+          font-size: 30px
+          font-weight: bolder
+        #clock
+          background-color: $green
+          width: 120px
+          height: 120px
+          margin: 15px
+          border-radius: 50%
       #pomodori
         background-color: $light-purple
+        list-style-type: none
+        margin: 10px
+        border-radius: 5px
         .pomodoro
-          background-color: $red
+          background-color: $green
           padding: 10px
           text-align: center
+          border-radius: 5px
+          margin: 5px

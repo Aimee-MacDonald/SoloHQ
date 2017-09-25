@@ -12,13 +12,15 @@ body
       
     main(id="main")
       aside(id="left-flap")
-        input(type="text", placeholder="Links")
-        input(type="text", placeholder="To do")
-        input(type="text", placeholder="Dreams")
-        input(type="text", placeholder="Fears")
-        button(type="button") Feed
-        button(type="button") Blog
-        button(type="button") Journal
+        #inputs
+          input(type="text", placeholder="Links")
+          input(type="text", placeholder="To do")
+          input(type="text", placeholder="Dreams")
+          input(type="text", placeholder="Fears")
+        #buttons
+          button(type="button") Feed
+          button(type="button") Blog
+          button(type="button") Journal
       article(id="workspace")
         form(id="registration" action="/register" method="get")
           input(type="text" placeholder="Email" name="un" required)
@@ -27,6 +29,8 @@ body
           button(type="submit") Register
       aside(id="right-flap")
         #timer
+          h1 Feed Me
+          #clock
         ul(id="pomodori")
           li(class="pomodoro", id="pomodoro1") Pomodoro 1
           li(class="pomodoro", id="pomodoro2") Pomodoro 2

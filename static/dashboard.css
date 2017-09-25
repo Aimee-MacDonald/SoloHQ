@@ -11,6 +11,7 @@
 }
 
 #dashboard #main {
+  border-top: 2px solid #6fc72e;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -18,9 +19,43 @@
 }
 
 #dashboard #main #left-flap {
-  background-color: #6fc72e;
+  background-color: #3b0d3b;
   display: flex;
   flex-flow: nowrap column;
+  justify-content: space-between;
+  padding: 5px;
+  border-right: 2px solid #6fc72e;
+}
+
+#dashboard #main #left-flap #inputs {
+  display: flex;
+  flex-flow: nowrap column;
+  border-radius: 5px;
+}
+
+#dashboard #main #left-flap #inputs input {
+  padding: 5px;
+  background-color: #6fc72e;
+  padding: 5px;
+  border-color: #b247b2;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#dashboard #main #left-flap #buttons {
+  display: flex;
+  flex-flow: nowrap column;
+  border-radius: 5px;
+}
+
+#dashboard #main #left-flap #buttons button {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 2px;
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: #6fc72e;
+  color: #3b0d3b;
 }
 
 #dashboard #main #workspace {
@@ -45,7 +80,6 @@
 }
 
 #dashboard #main #right-flap {
-  background-color: #6fc72e;
   display: flex;
   flex-flow: nowrap column;
 }
@@ -55,14 +89,37 @@
   min-width: 200px;
   min-height: 200px;
   margin: 10px;
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+#dashboard #main #right-flap #timer h1 {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#dashboard #main #right-flap #timer #clock {
+  background-color: #6fc72e;
+  width: 120px;
+  height: 120px;
+  margin: 15px;
+  border-radius: 50%;
 }
 
 #dashboard #main #right-flap #pomodori {
   background-color: #b247b2;
+  list-style-type: none;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 #dashboard #main #right-flap #pomodori .pomodoro {
-  background-color: #e34d00;
+  background-color: #6fc72e;
   padding: 10px;
   text-align: center;
+  border-radius: 5px;
+  margin: 5px;
 }
